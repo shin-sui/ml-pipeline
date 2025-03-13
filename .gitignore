@@ -10,6 +10,8 @@ wheels/
 /data
 /outputs
 /mlruns
+*.ckpt
+*.csv
 
 # Virtual environments
 .venv
