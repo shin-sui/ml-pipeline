@@ -1,0 +1,4 @@
+_target_: src.models.bert_module.BertForSequenceClassificationMultiLabel_pl
+model_name: cl-tohoku/bert-base-japanese-whole-word-masking
+num_labels: 1
+lr: 1e-5

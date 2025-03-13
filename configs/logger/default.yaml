@@ -1,0 +1,5 @@
+# ロガーの設定
+logger:
+  tensorboard:
+    save_dir: "logs/"
+    name: "tensorboard_logs"

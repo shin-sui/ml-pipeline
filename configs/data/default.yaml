@@ -1,0 +1,4 @@
+# データの設定
+data:
+  batch_size: 32
+  num_workers: 4

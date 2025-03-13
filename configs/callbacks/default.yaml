@@ -1,0 +1,12 @@
+# コールバックの設定
+callbacks:
+  early_stopping:
+    monitor: val_loss
+    patience: 3
+    mode: min
+  model_checkpoint:
+    monitor: val_loss
+    save_top_k: 1
+    mode: min
+    dirpath: "checkpoints/"
+    filename: "best-checkpoint"

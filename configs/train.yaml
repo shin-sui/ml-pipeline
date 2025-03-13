@@ -1,0 +1,19 @@
+defaults:
+  - _self_
+  - data: patent
+  - model: patent
+  - callbacks: default
+  - logger: mlflow
+  - trainer: cpu
+  - paths: default
+  - extras: default
+
+# その他の全体設定
+task_name: default_task
+tags: ["dev"]
+train: True
+test: True
+
+ckpt_path: null
+
+seed: 42
