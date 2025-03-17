@@ -1,10 +1,12 @@
 # コールバックの設定
 callbacks:
-  early_stopping:
+  EarlyStopping:
+    _target_: lightning.pytorch.callbacks.EarlyStopping
     monitor: val_loss
     patience: 3
     mode: min
-  model_checkpoint:
+  ModelCheckpoint:
+    _target_: lightning.pytorch.callbacks.ModelCheckpoint
     monitor: val_loss
     save_top_k: 1
     mode: min
