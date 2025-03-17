@@ -1,0 +1,6 @@
+# config/callbacks/slack.yaml
+callbacks:
+  SlackNotificationCallback:
+    _target_: src.callbacks.notifications.SlackNotificationCallback
+    slack_token: ${oc.env:SLACK_API_TOKEN} # 環境変数 SLACK_TOKEN から取得
+    channel: "#ml-pipeline-demo"           # 通知先の Slack チャンネル
