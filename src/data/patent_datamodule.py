@@ -3,7 +3,7 @@ import random
 
 import polars as pl
 import torch
-from pytorch_lightning import LightningDataModule
+from lightning.pytorch import LightningDataModule
 from torch.utils.data import DataLoader, Dataset
 from torchvision.transforms import transforms
 from transformers import BertJapaneseTokenizer

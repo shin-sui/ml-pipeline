@@ -1,6 +1,6 @@
 import torch
 from transformers import BertModel
-from pytorch_lightning import LightningModule
+from lightning.pytorch import LightningModule
 
 class BertForSequenceClassificationMultiLabel(torch.nn.Module):
 

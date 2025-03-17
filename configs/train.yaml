@@ -1,8 +1,8 @@
 defaults:
   - _self_
-  - data: patent
-  - model: patent
-  - callbacks: default
+  - data: mnist
+  - model: mnist
+  - callbacks: slack
   - logger: mlflow
   - trainer: cpu
   - paths: default

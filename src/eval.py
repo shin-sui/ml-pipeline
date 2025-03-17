@@ -2,8 +2,8 @@ from typing import Any
 
 import hydra
 import rootutils
-from pytorch_lightning import LightningDataModule, LightningModule, Trainer
-from pytorch_lightning.loggers import Logger
+from lightning.pytorch import LightningDataModule, LightningModule, Trainer
+from lightning.pytorch.loggers import Logger
 from omegaconf import DictConfig
 
 rootutils.setup_root(__file__, indicator=".project-root", pythonpath=True)

@@ -1,6 +1,6 @@
 import hydra
-from pytorch_lightning import Callback
-from pytorch_lightning.loggers import Logger
+from lightning.pytorch import Callback
+from lightning.pytorch.loggers import Logger
 from omegaconf import DictConfig
 
 from src.utils import pylogger
@@ -25,7 +25,7 @@ def instantiate_callbacks(callbacks_cfg: DictConfig) -> list[Callback]:
     if not isinstance(callbacks_cfg, DictConfig):
         raise TypeError("Callbacks config must be a DictConfig!")
 
-    for _, cb_conf in callbacks_cfg.items():
+    for _, cb_conf in callbacks_cfg["callbacks"].items():
         if isinstance(cb_conf, DictConfig) and "_target_" in cb_conf:
             log.info(f"Instantiating callback <{cb_conf._target_}>")
             callbacks.append(hydra.utils.instantiate(cb_conf))
