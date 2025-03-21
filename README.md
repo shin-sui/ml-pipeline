@@ -61,8 +61,8 @@ sequenceDiagram
         end
         train ->> train: trainer.test(model, datamodule, ckpt_path)
     end
-    train -->>- main: metric_dict
-    main ->>+ get_metric_value: metric_dict
-    get_metric_value -->>- main: metric_value
+    train -->>- main: metric_dict: dict[str, Any]
+    main ->>+ get_metric_value: metric_dict: dict[str, Any]
+    get_metric_value -->>- main: metric_value: float
     main -->> user: metric_value
 ```
