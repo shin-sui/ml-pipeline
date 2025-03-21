@@ -30,11 +30,12 @@ def print_config_tree(
 ) -> None:
     """Richを使ってDictConfig(設定オブジェクト)の内容をツリー構造として出力する
 
-    :param cfg: Hydraによって構成されるDictConfig
-    :param print_order: 出力順の指定
-    (default: data -> model -> callbacks -> logger -> trainer -> paths -> extras)
-    :param resolve: DictConfigをYAMLで出力する時に補間を行うかどうか(default: False)
-    :param save_to_file: Hydraの出力フォルダにエクスポートするかどうか(default: False)
+    Args:
+        cfg (DictConfig): Hydraによって構成されるDictConfig
+        print_order: 出力順の指定
+            (default: data -> model -> callbacks -> logger -> trainer -> paths -> extras)
+        resolve (bool): DictConfigをYAMLで出力する時に補間を行うかどうか(default: False)
+        save_to_file (bool): Hydraの出力フォルダにエクスポートするかどうか(default: False)
     """
     style = "dim"
     tree = rich.tree.Tree("CONFIG", style=style, guide_style=style)
@@ -76,8 +77,9 @@ def print_config_tree(
 def enforce_tags(cfg: DictConfig, save_to_file: bool = False) -> None:
     """DictConfig(設定オブジェクト)にタグ情報が含まれていない場合、ユーザーにタグの入力を促し設定に追加する。
 
-    :param cfg: Hydraによって構成されるDictConfig
-    :param save_to_file: Hydraの出力フォルダにエクスポートするかどうか(default: False)
+    Args:
+        cfg (DictConfig): Hydraによって構成されるDictConfig
+        save_to_file (bool): Hydraの出力フォルダにエクスポートするかどうか(default: False)
     """
     if not cfg.get("tags"):
         if "id" in HydraConfig().cfg.hydra.job:
