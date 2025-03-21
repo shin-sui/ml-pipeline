@@ -1,8 +1,9 @@
 # https://mlflow.org
 
-mlflow:
-  _target_: pytorch_lightning.loggers.mlflow.MLFlowLogger
-  tracking_uri: /mlruns
-  tags: null
-  prefix: ""
-  artifact_location: null
+logger:
+  mlflow:
+    _target_: pytorch_lightning.loggers.mlflow.MLFlowLogger
+    tracking_uri: mlruns
+    tags: null
+    prefix: ""
+    artifact_location: null
